@@ -64,9 +64,9 @@ select, textarea{
 
 <p>หนึ่งในความทรงจำที่ชอบที่สุดคือ</p>
 <textarea id="memory"></textarea>
-
-<p>อยากบอกอะไรเราก่อนจบมั้ย</p>
 <textarea id="wish"></textarea>
+<p>อยากบอกอะไรเราก่อนจบมั้ย</p>
+<textarea id="message2"></textarea>
 
 <button onclick="goResult()">ส่งคำตอบ</button>
 </div>
@@ -114,14 +114,16 @@ async function goResult(){
 
   let memory = document.getElementById("memory").value;
   let wish = document.getElementById("wish").value;
-
+let extra = document.getElementById("message2").value;
   // ส่งขึ้น database
   await addDoc(collection(db, "answers"), {
-    name: friend,
-    memory: memory,
-    wish: wish,
-    time: new Date()
-  });
+  name: friend,
+  memory: memory,
+  wish: wish,
+  extra: extra,
+  time: new Date()
+});
+ 
 
   alert("ส่งคำตอบแล้ว 💖");
 
