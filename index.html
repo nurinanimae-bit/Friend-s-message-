@@ -137,7 +137,7 @@ window.goResult = async function(){
       extra: extra,
       time: new Date()
     });
-
+alert("ส่งสำเร็จแล้ว 💖");
     page2.style.display="none";
     page3.style.display="block";
 
@@ -151,6 +151,12 @@ window.goResult = async function(){
 /* ---------- Show Message ---------- */
 function showMessage(){
 
+  let msg="Hello 💖";
+
+  document.getElementById("message").innerText = msg;
+}
+window.goQuestion = goQuestion;
+window.goResult = goResult;
   let msg="";
 
   if(friend==="a"){
