@@ -61,16 +61,24 @@ select, textarea{
 <!-- หน้า 2 -->
 <div class="box" id="page2" style="display:none;">
 <h2>ผ่านอะไรกันมาบ้าง ✨</h2>
-
+<form id="myForm">
 <p>หนึ่งในความทรงจำที่ชอบที่สุดคือ</p>
 <textarea id="memory"></textarea>
 <textarea id="wish"></textarea>
 <p>อยากบอกอะไรเราก่อนจบมั้ย</p>
 <textarea id="message2"></textarea>
+<button type="submit">ส่งคำตอบ</button>
+</form>
 
-<button onclick="goResult()">ส่งคำตอบ</button>
 </div>
+document.getElementById("myForm")
+.addEventListener("submit", function(event) {
 
+    event.preventDefault();
+
+    window.location.href = "page2.html";
+
+})
 <!-- หน้า 3 -->
 <div class="box" id="page3" style="display:none;">
 <h2>ข้อความจากเราถึงคุณ 💌</h2>
