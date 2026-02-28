@@ -68,13 +68,6 @@ select, textarea{
 <p>อยากบอกอะไรเราก่อนจบมั้ย</p>
 <textarea id="message2"></textarea>
 
-  <button onclick="goResult()">ส่งคำตอบ</button>
-</div>
-<!-- หน้า 3 -->
-<div class="box" id="page3" style="display:none;">
-<h2>ข้อความจากเราถึงคุณ 💌</h2>
-<p id="message"></p>
-</div>
 
 <script type="module">
 
@@ -108,7 +101,13 @@ function goQuestion(){
   page1.style.display="none";
   page2.style.display="block";
 }
-
+<button onclick="goResult()">ส่งคำตอบ</button>
+</div>
+<!-- หน้า 3 -->
+<div class="box" id="page3" style="display:none;">
+<h2>ข้อความจากเราถึงคุณ 💌</h2>
+<p id="message"></p>
+</div>
 async function goResult(){
 
   let memory = document.getElementById("memory").value;
