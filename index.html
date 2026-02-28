@@ -74,7 +74,7 @@ select, textarea{
 <!-- หน้า 3 -->
 <div class="box" id="page3" style="display:none;">
 <h2>ข้อความจากเราถึงคุณ 💌</h2>
-<p id="message2"></p>
+<p id="message"></p>
 </div>
 
 <script type="module">
@@ -114,31 +114,28 @@ async function goResult(){
 
   let memory = document.getElementById("memory").value;
   let wish = document.getElementById("wish").value;
-let extra = document.getElementById("message2").value;
-  // ส่งขึ้น database
+  let extra = document.getElementById("message2").value;
+
   try {
 
-  await addDoc(collection(db, "answers"), {
-    name: friend,
-    memory: memory,
-    wish: wish,
-    extra: extra,
-    time: new Date()
-  });
+    await addDoc(collection(db, "answers"), {
+      name: friend,
+      memory: memory,
+      wish: wish,
+      extra: extra,
+      time: new Date()
+    });
 
-  alert("ส่งคำตอบแล้ว 💖");
+    alert("ส่งคำตอบแล้ว 💖");
 
-} catch(error){
-  alert("เกิด error: " + error.message);
-}
- 
+    page2.style.display="none";
+    page3.style.display="block";
 
-  alert("ส่งคำตอบแล้ว 💖");
+    showMessage();
 
-  page2.style.display="none";
-  page3.style.display="block";
-
-  showMessage();
+  } catch(error){
+    alert("เกิด error: " + error.message);
+  }
 }
 
 function showMessage(){
