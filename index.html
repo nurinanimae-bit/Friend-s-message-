@@ -67,17 +67,9 @@ select, textarea{
 <textarea id="wish"></textarea>
 <p>อยากบอกอะไรเราก่อนจบมั้ย</p>
 <textarea id="message2"></textarea>
-<button type="submit">ส่งคำตอบ</button>
-</form>
+<button type="button" onclick="goResult()">ส่งคำตอบ</button>
 
 </div>
-document.getElementById("myForm")
-.addEventListener("submit", function(event) {
-
-    event.preventDefault();
-
-    window.location.href = "page3.html";
-
 })
 <!-- หน้า 3 -->
 <div class="box" id="page3" style="display:none;">
