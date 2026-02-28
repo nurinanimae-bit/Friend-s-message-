@@ -116,13 +116,21 @@ async function goResult(){
   let wish = document.getElementById("wish").value;
 let extra = document.getElementById("message2").value;
   // ส่งขึ้น database
+  try {
+
   await addDoc(collection(db, "answers"), {
-  name: friend,
-  memory: memory,
-  wish: wish,
-  extra: extra,
-  time: new Date()
-});
+    name: friend,
+    memory: memory,
+    wish: wish,
+    extra: extra,
+    time: new Date()
+  });
+
+  alert("ส่งคำตอบแล้ว 💖");
+
+} catch(error){
+  alert("เกิด error: " + error.message);
+}
  
 
   alert("ส่งคำตอบแล้ว 💖");
