@@ -113,7 +113,7 @@ function goQuestion(){
 async function goResult(){
 
   let memory = document.getElementById("memory").value;
-let extra = document.getElementById("message").value;
+let extra = document.getElementById("message2").value;
   // ส่งขึ้น database
   try {
 
@@ -159,9 +159,7 @@ function showMessage(){
     msg="เด็กน้อยขี้นอยคนนี้โตขึ้นเยอะเลยนี่นา ขอโทษที่ผ่านมาวีนแกบ่อย แต่ไม่ได้แปลว่าเกลียดนะ สนุกดี และขอบคุณที่คอยเป็นเพื่อนกินข้าว ถึงจะดูชอบแกล้งกัน แต่แกก็ยังเป็นคนแรก ๆที่เรานึกถึง แกเป็นเพื่อนที่ดีคนนึงเลย ยินดีที่ได้รู้จักนะ และแม้จะมีมุมเด็กน้อยให้เห็น แต่ก็มีมุมคนโตให้เซอไพรส์ เก่งจริง ๆเลย เพราะฉะนั้นอย่าเครียดมากไปนะ เรามองเห็นความพยายามของแกอยู่ ภูมิใจในตัวเองให้มาก ๆ เพราะเราภูมิใจในตัวฟารุกนะ";
   }
 
-  document.getElementById("message2").innerHTML = msg;
-
-  alert(msg);
+  document.getElementById("message").innerHTML = msg;
 }
 window.goQuestion = goQuestion;
 window.goResult = goResult;
